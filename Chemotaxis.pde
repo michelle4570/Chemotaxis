@@ -1,34 +1,4 @@
-//Walker bob;
-//Walker [] shadyacres = {new Walker(), new Walker(), new Walker()};
- Walker [] sunnysquare;
- //declare bacteria variables here   
- void setup()   
- {     
- 	//initialize bacteria variables here   
-  size(500,500);
-  background(0);
-//  bob = new Walker();
-  sunnysquare = new Walker[100];
-  int i = 0;
-  while (i<sunnysquare.length){
-    sunnysquare[i] = new Walker();
-    i++;
-  }
- }   
- void draw()   
- {    
- 	//move and show the bacteria   
-//  bob.walk();
-//  bob.show();
-//  shadyacres[0].walk();
-//  shadyacres[0].show();
- // fill(78,53,36);
- //fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
-  for (int i = 0; i < sunnysquare.length; i++){
-    sunnysquare[i].walk();
-    sunnysquare[i].show();
- }  
- class Bacteria    
+class Walker
 {
   int myX, myY;
   int myColor;
@@ -101,5 +71,38 @@
     line(myX -11, myY-8, myX - 13, myY-9);
     line(myX -13, myY - 9, myX -15, myY -5);
     }
-  
- }    
+//    if (get(mouseX,mouseY) != color(myColor))
+//      alive = false;
+  }
+
+
+//Walker bob;
+//Walker [] shadyacres = {new Walker(), new Walker(), new Walker()};
+Walker [] sunnysquare;
+
+void setup(){
+  size(500,500);
+  background(0);
+//  bob = new Walker();
+  sunnysquare = new Walker[100];
+  int i = 0;
+  while (i<sunnysquare.length){
+    sunnysquare[i] = new Walker();
+    i++;
+  }
+}
+
+void draw(){
+  background(220);
+//  bob.walk();
+//  bob.show();
+//  shadyacres[0].walk();
+//  shadyacres[0].show();
+ // fill(78,53,36);
+ //fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+  for (int i = 0; i < sunnysquare.length; i++){
+    sunnysquare[i].walk();
+    sunnysquare[i].show();
+  }   
+    
+}
